@@ -101,10 +101,42 @@
     }
 }
 
+// Action
+.action {
+    display: flex;
+    align-items: center;
+}
+
 .more-btn {
     font-size: 2rem;
     margin-left: 28px;
     padding: 4px 8px;
     background-color: transparent;
     cursor: pointer;
+}
+
+.action-btn {
+    font-size: 2.2rem;
+    background-color: transparent;
+    color: #161823;
+    padding: 4px 12px;
+    cursor: pointer;
+    display: flex;
+    justify-items: center;
+}
+
+.event-icon {
+    padding: 4px 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.message-icon {
+    width: 30px;
 }
