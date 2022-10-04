@@ -27,6 +27,12 @@
     margin-left: 8px;
 }
 
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
 // Button types
 .rounded {
     border-radius: 999px;
@@ -74,15 +80,12 @@
 }
 
 .upload {
-    min-width: 110px;
-    padding: 0 16px;
-    height: 36px;
     border: 1px solid rgba(22, 24, 35, 0.12);
     border-radius: 2px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 1);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .03);
+    }
 }
 
 // Button size
