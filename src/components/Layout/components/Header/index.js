@@ -7,7 +7,7 @@ import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import styles from './Header.module.scss';
 import images from '../../../../assets/images';
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faPlus, faUpload } from '@fortawesome/free-solid-svg-icons';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
 
@@ -56,7 +56,8 @@ function Header() {
                 </div>
             </Tippy>
             <div className={cx('action')}>
-                <Button outline size="small">Log in</Button>
+                <Button upload leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+                <Button primary>Log in</Button>
             </div>
         </div>
     </header>

@@ -11,8 +11,15 @@ function Button({
     href,
     primary = false,
     outline = false,
-    size = "normal",
+    small = false,
+    large = false,
+    text = false,
+    disabled = false,
+    rounded = false,
     children,
+    className,
+    leftIcon,
+    upload,
     onClick,
     ...passProps
 }) {
@@ -20,6 +27,11 @@ function Button({
     const props = {
         onClick,
         ...passProps,
+    };
+
+    // Remove event listener
+    if (disabled) {
+        delete props.onClick;
     }
 
     if (to) {
@@ -31,14 +43,21 @@ function Button({
     }
 
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         outline,
-        size: size,
+        small,
+        large,
+        text,
+        disabled,
+        rounded,
+        upload,
     });
 
     return (
         <Component className={classes} {...props}>
-            <span>{children}</span>
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+            <span className={cx('title')}>{children}</span>
         </Component>
     );
 }
