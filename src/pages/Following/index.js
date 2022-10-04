@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Following(props) {
     return (
         <h2>Following Page</h2> 

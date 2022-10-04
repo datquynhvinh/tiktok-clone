@@ -1,3 +1,5 @@
+import React from 'react';
+
 import classNames from 'classnames/bind';
 import Header from '../components/Header';
 import styles from './DefaultLayout.module.scss';
