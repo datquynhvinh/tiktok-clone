@@ -12,15 +12,19 @@ import images from '../../../../assets/images';
 import {
     faCircleQuestion,
     faCircleXmark,
+    faCoins,
     faEarthAsia,
     faEllipsisVertical,
+    faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faPlus
+    faPlus,
+    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import AccountItem from '../../../AccountItem';
 import Button from '../../../Button';
 import Menu from '../../Popper/Menu';
+import Image from '../../../Images';
 
 const cx = classNames.bind(styles);
 
@@ -55,9 +59,19 @@ const MENU_ITEMS = [
 
 const MENU_USER_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Profile',
+        icon: <FontAwesomeIcon icon={faUser} />,
+        title: 'View profile',
         to: 'profile'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCoins} />,
+        title: 'Get coins',
+        to: 'coins'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faGear} />,
+        title: 'Setting',
+        to: 'setting'
     },
     ...MENU_ITEMS
 ];
@@ -115,7 +129,7 @@ function Header() {
                             placement='bottom'
                         >
                             <button className={cx('action-btn', 'event-icon')}>
-                                <img className='message-icon' src={images.messageIcon} alt='Message' />
+                                <Image className={cx('message-icon')} src={images.messageIcon} alt='Message' />
                             </button>
                         </Tippy>
                         <Tippy
@@ -124,7 +138,7 @@ function Header() {
                             placement='bottom'
                         >
                             <button className={cx('action-btn', 'event-icon')}>
-                                <img className='message-icon' src={images.noticeIcon} alt='Notification' />
+                                <Image className={cx('notice-icon')} src={images.noticeIcon} alt='Notification' />
                             </button>
                         </Tippy>
                     </>
@@ -135,11 +149,9 @@ function Header() {
                     </>
                 )}
 
-                <Menu items={MENU_ITEMS}>
+                <Menu items={currentUser ? MENU_USER_ITEMS : MENU_ITEMS}>
                     {currentUser ? (
-                        <>
-                            <img src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665043200&x-signature=eu0mis0wSPfLyudfTNfjPwKlFzU%3D" className={cx('user-avatar')} alt="Le Thac Dat" />
-                        </>
+                        <Image src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665043200&x-signature=eu0mis0wSPfLyudfTNfjPwKlFzU%3D" className={cx('user-avatar')} alt="Le Thac Dat" />
                     ) : (
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />

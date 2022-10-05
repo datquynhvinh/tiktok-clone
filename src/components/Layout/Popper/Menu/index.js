@@ -35,7 +35,7 @@ function Menu({ children, items = [] }) {
     return (
         <Tippy
             interactive
-            delay={[0, 700]}
+            delay={[0, 300]}
             placement='bottom-end'
             render={attrs => (
                 <div className={cx('menu-more')} tabIndex='-1' {...attrs}>
