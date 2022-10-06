@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
+import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
 import styles from './Header.module.scss';
 import images from '../../../../assets/images';
@@ -20,6 +21,7 @@ import Menu from '../../Popper/Menu';
 import Image from '../../../Images';
 import Search from '../Search';
 import { InboxIcon, NoticeIcon } from '../../../Icons'
+import routesConfig from '../../../../config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -76,9 +78,9 @@ function Header() {
 
     return <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-            <div className={cx('logo')}>
+            <Link to={routesConfig.home} className={cx('logo')}>
                 <img src={images.logo} alt='Logo' />
-            </div>
+            </Link>
             <Search />
             <div className={cx('action')}>
                 {currentUser ? (
@@ -112,7 +114,7 @@ function Header() {
 
                 <Menu items={currentUser ? MENU_USER_ITEMS : MENU_ITEMS}>
                     {currentUser ? (
-                        <Image src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665043200&x-signature=eu0mis0wSPfLyudfTNfjPwKlFzU%3D" className={cx('user-avatar')} alt="Le Thac Dat" />
+                        <Image src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665194400&x-signature=3KCE1ddaCcBufHppgruvM11HuW8%3D" className={cx('user-avatar')} alt="Le Thac Dat" />
                     ) : (
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
