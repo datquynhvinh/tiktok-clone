@@ -2,20 +2,21 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Tippy from '@tippyjs/react';
+import HeadlessTippy from '@tippyjs/react/headless';
 
 import styles from './SuggestedAcounts.module.scss';
 import { Wrapper as PopperWrapper } from '../Layout/Popper';
 import { AccountPreview } from './AccountPreview';
+import Image from '../Images';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ data }) {
     const renderPreview = (props) => {
         return (
             <div tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview data={data} />
                 </PopperWrapper>
             </div>
         )
@@ -24,7 +25,7 @@ function AccountItem() {
     return (
         // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context. 
         <div>
-            <Tippy
+            <HeadlessTippy
                 interactive
                 delay={[800, 0]}
                 offset={[-20, 0]}
@@ -32,20 +33,20 @@ function AccountItem() {
                 render={renderPreview}
             >
                 <div className={cx('account-item')}>
-                    <img
+                    <Image
                         className={cx('avatar')}
-                        src='https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665194400&x-signature=3KCE1ddaCcBufHppgruvM11HuW8%3D'
-                        alt='Le Thac Dat'
+                        src={data.avatar}
+                        alt={data.first_name + ' ' + data.last_name}
                     />
                     <div className={cx('item-info')}>
                         <p className={cx('nickname')}>
-                            <strong>datquynhvinh</strong>
-                            <FontAwesomeIcon className={cx('verify')} icon={faCheckCircle} />
+                            <strong>{data.nickname}</strong>
+                            {data.tick && <FontAwesomeIcon className={cx('verify')} icon={faCheckCircle} />}
                         </p>
-                        <p className={cx('name')}>Le Thac Dat</p>
+                        <p className={cx('name')}>{data.first_name + ' ' + data.last_name}</p>
                     </div>
                 </div>
-            </Tippy>
+            </HeadlessTippy>
         </div>
     );
 }

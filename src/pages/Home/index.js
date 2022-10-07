@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Home(props) {
+function Home() {
     return (
-        <h2>Home Page</h2>
+        <h2 style={{height: 2000}}>Home Page</h2>
     );
 }
 

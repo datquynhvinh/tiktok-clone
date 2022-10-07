@@ -40,6 +40,42 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tiếng Việt'
                 },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                },
+                {
+                    code: 'en',
+                    title: 'English'
+                },
             ]
         }
     },
@@ -78,7 +114,7 @@ function Header() {
 
     return <header className={cx('wrapper')}>
         <div className={cx('inner')}>
-            <Link to={routesConfig.home} className={cx('logo')}>
+            <Link href={routesConfig.home} className={cx('logo')}>
                 <img src={images.logo} alt='Logo' />
             </Link>
             <Search />

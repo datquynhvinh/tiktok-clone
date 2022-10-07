@@ -11,6 +11,10 @@
     padding-bottom: 8px;
 }
 
+.menu-more-scrollable {
+    overflow-y: auto;
+}
+
 .menu-item {
     display: flex;
     width: 100%;
@@ -28,6 +32,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 
 .back-btn {
