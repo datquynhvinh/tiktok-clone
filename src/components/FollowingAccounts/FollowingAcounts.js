@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import styles from './SuggestedAcounts.module.scss';
+import styles from './FollowingAcounts.module.scss';
 import AccountItem from './AccountItem';
 import request from '../../utils/request';
 
 const cx = classNames.bind(styles);
 
-function SuggestedAcounts({ label }) {
+function FollowingAcounts({ label }) {
     const [allAccountSuggested, setAllAccountSuggested] = useState([]);
     const [moreAccountSuggested, setMoreAccountSuggested] = useState([]);
     const [viewAllAccount, setViewAllAccount] = useState(false);
@@ -54,4 +54,4 @@ function SuggestedAcounts({ label }) {
     );
 }
 
-export default SuggestedAcounts;
+export default FollowingAcounts;

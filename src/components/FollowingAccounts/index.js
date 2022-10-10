@@ -1,1 +1,1 @@
-export { default } from './SuggestedAcounts';
+export { default } from './FollowingAcounts';

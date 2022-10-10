@@ -14,4 +14,9 @@
 
 .content {
     flex: 1;
+    margin-left: var(--default-sidebar-width);
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    max-width: 1150px;
 }
