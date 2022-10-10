@@ -150,7 +150,7 @@ function Header() {
 
                 <Menu items={currentUser ? MENU_USER_ITEMS : MENU_ITEMS}>
                     {currentUser ? (
-                        <Image src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d0b071e67fc21688b58c1865c1de887e~c5_720x720.jpeg?x-expires=1665194400&x-signature=3KCE1ddaCcBufHppgruvM11HuW8%3D" className={cx('user-avatar')} alt="Le Thac Dat" />
+                        <Image src="https://files.fullstack.edu.vn/f8-tiktok/users/75/630267483ed7c.jpg" className={cx('user-avatar')} alt="Le Thac Dat" />
                     ) : (
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />

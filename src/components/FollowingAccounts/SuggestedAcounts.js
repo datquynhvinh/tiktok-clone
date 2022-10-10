@@ -16,7 +16,7 @@ function SuggestedAcounts({ label }) {
             try {
                 const res = await request.get(`users/suggested`, {
                     params: {
-                        page: 1,
+                        page: 2,
                         per_page: 20,
                     },
                 });

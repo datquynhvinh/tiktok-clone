@@ -4,7 +4,8 @@ import styles from './Sidebar.module.scss';
 import Menu, { MenuItem } from './Menu';
 import config from '../../../../config';
 import { HomeIcon, UserGroupIcon, LiveIcon } from '../../../Icons';
-import SuggestedAccounts from '../../../../components/SuggestedAccounts';
+import SuggestedAccounts from './../../../SuggestedAccounts';
+import FollowingAccounts from './../../../FollowingAccounts'; 
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +19,7 @@ function Sidebar() {
             </Menu>
 
             <SuggestedAccounts label="Suggested accounts" />
-            <SuggestedAccounts label="Following accounts" />
+            <FollowingAccounts label="Following accounts" />
         </aside>
     );
 }
